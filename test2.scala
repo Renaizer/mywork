@@ -1,3 +1,6 @@
+
+//This class when compiled, use :javap -p Test2.class
+//This gives bytecodes of the hdghgHlass as UserId and TweetId classes compiled to an In
 case class UserId(id:Int) extends AnyVal
 case class UserName(name:String) extends AnyVal
 case class TweetId(id:Int) extends AnyVal
