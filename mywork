@@ -9,3 +9,26 @@ $ : sudo /usr/bin/vmware-installer -u vmware-player
 Removes VM player from machine
 
 Link # https://www.solaris-cookbook.eu/linux/ubuntu-how-to-uninstall-vmware-player-or-vmware-workstation/
+
+
+---------------------
+
+Add path to environment variable
+
+Change to your home directory.
+
+cd $HOME
+
+Open the .bashrc file.
+
+Add the following line to the file. Replace the JDK directory with the name of your java installation directory.
+
+export PATH=/usr/java/<JDK Directory>/bin:$PATH
+
+Save the file and exit.
+
+Use the source command to force Linux to reload the .bashrc file which normally is read only when you log in each time.
+
+source .bashrc
+
+
