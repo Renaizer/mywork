@@ -7,3 +7,5 @@ List all  VMWare products installed on machine
 $ : sudo /usr/bin/vmware-installer -u vmware-player
 
 Removes VM player from machine
+
+Link # https://www.solaris-cookbook.eu/linux/ubuntu-how-to-uninstall-vmware-player-or-vmware-workstation/
