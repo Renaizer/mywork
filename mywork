@@ -1,0 +1,9 @@
+How to remove Vmware player from Ubuntu 
+
+$ : /usr/bin/vmware-installer -l
+
+List all  VMWare products installed on machine
+
+$ : sudo /usr/bin/vmware-installer -u vmware-player
+
+Removes VM player from machine
