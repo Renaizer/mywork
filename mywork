@@ -31,4 +31,14 @@ Use the source command to force Linux to reload the .bashrc file which normally 
 
 source .bashrc
 
+==============
+
+List out all Environmental variables in
+https://www.guru99.com/linux-environment-variables.html
+
+=============
+
+
+
+
 
