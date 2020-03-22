@@ -1,0 +1,19 @@
+This query covers how to do incremental updates on Hive.
+In this scenario we had a table that recives the data from Sqoop on incremental basis.
+if we do "SELECT * FROM tablename;" gives all the data with old and recent updated records.
+To address this scenario I found a link on Youtube (GKCODELAB) where he had explained everything very well.
+
+Here is the query I have to run in order to incremental update on such Hive table.
+
+
+
+create view updatedCustomer as                                                                                                                                
+select t1.* from (select * from newcustomer) t1                                                                                                               
+JOIN                                                                                                                                                          
+(select id, max(arrivaldate) as latestarrived from                                                                                                            
+(select * from newcustomer) t2 group by id) s                                                                                                                 
+ON t1.id=s.id AND t1.arrivaldate=s.latestarrived;
+
+
+Thank you,
+Hamidkhan
