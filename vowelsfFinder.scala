@@ -77,5 +77,9 @@ Explanation: There is no beautiful substring, so return 0.
       case false => res0.max
     }
 
+
+//Here one thing is more important to consider that creating the right regex for the requirment can solve the problem in very short time
+//In my case I strugled to create the regex, although it was very simple.
+
     res
   }
