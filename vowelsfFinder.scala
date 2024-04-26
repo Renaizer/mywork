@@ -1,4 +1,4 @@
-//problem Statement
+/*problem Statement
 A string is considered beautiful if it satisfies the following conditions:
 Each of the 5 English vowels ('a', 'e', 'i', 'o', 'u') must appear at least once in it.
 The letters must be sorted in alphabetical order (i.e. all 'a's before 'e's, all 'e's before 'i's, etc.).
@@ -18,11 +18,12 @@ Example 3:
 Input: word = "a"
 Output: 0
 Explanation: There is no beautiful substring, so return 0.
+*/
 
 
+// To solve this problem I started with traversing each element in the source string and identifying each element if it satisies the beutifull string criteria
+// Below was the code I tried during the interview
 
-////// To solve this problem I started with traversing each element in the source string and identifying each element if it satisies the beutifull string criteria
-///// Below was the code I tried during the interview
   def checkifbeutiful( source:String):Int={
     val a:List[Char] = List('a', 'e', 'i','o','u')
 
