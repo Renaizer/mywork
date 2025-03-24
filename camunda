@@ -1,7 +1,7 @@
 global:
 
   image:
-    registry: 'gitlab.paraport.com/parametric/dependency_proxy/containers'
+    registry: ''
     pullSecrets:
       - name: registry-credentials
   identity:
@@ -15,12 +15,12 @@ global:
     enabled: true
     auth:
       username: admin
-      existingSecret: "workflow-opensearch-secrets"
+      existingSecret: ""
       existingSecretKey: "opensearch-password"
 
     url:
       protocol: https
-      host: "vpc-wf-mr-65598-gl7fj7ec5fdaserhczmsbyel6q.us-east-1.es.amazonaws.com"
+      host: ""
       port: 443
 
 zeebe:
