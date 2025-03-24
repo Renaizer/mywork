@@ -1,0 +1,87 @@
+global:
+
+  image:
+    registry: 'gitlab.paraport.com/parametric/dependency_proxy/containers'
+    pullSecrets:
+      - name: registry-credentials
+  identity:
+    auth:
+      enabled: false
+
+  elasticsearch:
+    enabled: false
+
+  opensearch:
+    enabled: true
+    auth:
+      username: admin
+      existingSecret: "workflow-opensearch-secrets"
+      existingSecretKey: "opensearch-password"
+
+    url:
+      protocol: https
+      host: "vpc-wf-mr-65598-gl7fj7ec5fdaserhczmsbyel6q.us-east-1.es.amazonaws.com"
+      port: 443
+
+zeebe:
+  resources:
+    limits:
+      cpu: 1
+      memory: 1Gi
+    requests:
+      cpu: 200m
+      memory: 128Mi
+  logLevel: INFO
+
+zeebeGateway:
+  resources:
+    limits:
+      cpu: 1
+      memory: 1Gi
+    requests:
+      cpu: 200m
+      memory: 128Mi
+  ingress:
+    className: nginx
+    enabled: true
+    rest:
+      path: "/zeebe"
+      enabled: true
+      host: zeebe-gateway.wfengine__INGRESS_SUBPATH__
+      tls:
+        enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    grpc:
+      enabled: true
+      host: zeebe.wfengine__INGRESS_SUBPATH__
+      tls:
+        enabled: true
+      annotations:
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+        alb.ingress.kubernetes.io/scheme: internal
+        alb.ingress.kubernetes.io/ssl-redirect: '443'
+        alb.ingress.kubernetes.io/target-type: ip
+        alb.ingress.kubernetes.io/backend-protocol-version: "GRPC"
+  contextPath: "/zeebe"
+
+identity:
+  enabled: false
+
+operate:
+  enabled: false
+
+tasklist:
+  enabled: false
+
+optimize:
+  enabled: false
+
+connectors:
+  enabled: false
+
+identityKeycloak:
+  enabled: false
+
+elasticsearch:
+  enabled: false
